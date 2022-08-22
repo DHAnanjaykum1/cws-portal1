@@ -5,16 +5,16 @@
         @include('admin.side')
         <div class="w-5/6  px-5">
             <div class="flex justify-between mt-3">
-                <h2 class="text-2xl font-bold">Manage Course</h2>
-                <a href=""class="px-3 py-2 bg-gradient-to-r from-green-500 to-blue-600 hover:from-pink-600 hover:to-yellow-600 rounded-xl font-semibold ">Add New Course</a>
+                <h2 class="text-2xl font-bold">Manage Student</h2>
+                <a href=""class="px-3 py-2 bg-gradient-to-r from-green-500 to-blue-600 hover:from-pink-600 hover:to-yellow-600 rounded-xl font-semibold ">Add New Student</a>
             </div>
             <table class="border-separate border border-slate-800">
                 
                   <tr>
                     <th class="border border-slate-500 ">Id</th>
-                    <th class="border border-slate-500">Course Name</th>
+                    <th class="border border-slate-500">Name</th>
                     <th class="border border-slate-500">Contact</th>
-                    <th class="border border-slate-500">Duration</th>
+                    <th class="border border-slate-500">email</th>
                     <th class="border border-slate-500">Fees</th>
                   </tr>
                   <tr>

@@ -12,7 +12,11 @@
             </div>
         </div>
     </div>
-    <div class="flex gap-5 my-4 px-10">
+    <div class="px-10 py-5">
+        <h2 class="text-2xl font-semibold text-green-500 ">Our Courses</h2>
+        <p class="text-sm">Lorem ipsum dolor sit amet</p>
+    </div>
+    <div class="flex gap-5 px-10">
         <div class="w-1/6">
             <div class="bg-white rounded-lg border shadow">
                 <div class="p-2">
@@ -74,7 +78,11 @@
             </div>
         </div>
     </div>
-    <div class="flex px-20 py-10">
+    <div class="px-10 py-5">
+        <h2 class="text-2xl font-semibold text-green-500 ">Our Students In Industry</h2>
+        <p class="text-sm">Contributing Nation Development</p>
+    </div>
+    <div class="flex px-10">
         <div class="w-1/5 p-2">
             <div class="bg-white rounded-lg border shadow">
                 <div class="p-2 text-center">
@@ -126,4 +134,5 @@
             </div>
         </div>
     </div>
+    @include('footer')
 @endsection

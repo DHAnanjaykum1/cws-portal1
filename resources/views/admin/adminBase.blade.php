@@ -13,7 +13,7 @@
         
         <ul class="flex gap-3">
             <li><a href="" class="font-semibold text-white hover:text-red-200">Home</a></li>
-            <li><a href="" class="px-3 py-2 bg-gradient-to-r from-teal-400 to-red-500 hover:from-orange-500 hover:to-emerald-500 rounded-full font-semibold">Logout</a></li>
+            <li><a href="" class="px-3 py-2 bg-gradient-to-r from-teal-400 to-red-500 hover:from-orange-500 hover:to-emerald-500 rounded-xl font-semibold">Logout</a></li>
         </ul>
     </div>
     
