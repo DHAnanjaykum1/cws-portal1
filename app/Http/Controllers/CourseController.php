@@ -14,7 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view("admin.manageCourse");
+        $data['course'] = Course::all();
+        return view("admin.manageCourse",$data);
     }
 
     /**
@@ -24,7 +25,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin/addCourse");
     }
 
     /**
@@ -35,7 +36,29 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->isMethod("post")){
+            $data=$request->validate([
+                'title'=> 'required',
+                'duration'=> 'required',
+                'price'=> 'required',
+                'discount_price'=> 'required',
+                'description'=> 'required',
+                'image'=> 'required|image',
+            ]);
+
+            $data = new Course();
+            $data->title = $request->title;
+            $data->duration = $request->duration;
+            $data->price = $request->price;
+            $data->discount_price = $request->discount_price;
+            $data->description = $request->description;
+
+            $filename=$request->image->getClientOriginalName();
+            $request->image->move(public_path("course"),$filename);
+            $data->image=$filename;
+            $data->save();
+            return redirect()->route("course.index");
+        }
     }
 
     /**
@@ -80,6 +103,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return redirect()->route("course.index");
     }
 }
