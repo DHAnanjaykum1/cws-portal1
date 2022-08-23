@@ -17,71 +17,26 @@
         <p class="text-sm">Lorem ipsum dolor sit amet</p>
     </div>
     <div class="flex gap-5 px-10">
-        <div class="w-1/6">
+        @foreach ($data as $item)
+        
+            <a class="w-1/6" href="{{ route('course.index') }}">
             <div class="bg-white rounded-lg border shadow">
                 <div class="p-2">
-                <img src="https://codewithsadiq.com/public/images/course/1639911906.jpg" alt="">
+                <img src="{{asset('course/'.$item->image)}}" alt="" class="w-full h-32 rounded-sm">
                 <hr>
-                <h2>Python With Data Structure</h2>
+                <h2>{{$item->title}}</h2>
             </div>
-            <div class="bg-teal-800 font-bold text-white w-full p-3 rounded-bl-lg rounded-br-lg">Duration : 4 Month</div>   
+            <div class="bg-teal-800 font-bold text-white w-full p-3 rounded-bl-lg rounded-br-lg">Duration : {{$item->duration}} Month</div>   
             </div>
-        </div>
-        <div class="w-1/6">
-            <div class="bg-white rounded-lg border shadow">
-                <div class="p-2">
-                <img src="https://codewithsadiq.com/public/images/course/1639915439.jpg" alt="">
-                <hr>
-                <h2>django & python Devoloper</h2>
-            </div>
-            <div class="bg-teal-800 font-bold text-white w-full p-3 rounded-bl-lg rounded-br-lg">Duration : 6 Month</div>   
-            </div>
-        </div>
-        <div class="w-1/6">
-            <div class="bg-white rounded-lg border shadow">
-                <div class="p-2">
-                <img src="https://codewithsadiq.com/public/images/course/1639916039.jpg" alt="">
-                <hr>
-                <h2>Fule stake with MERN devopler</h2>
-            </div>
-            <div class="bg-teal-800 font-bold text-white w-full p-3 rounded-bl-lg rounded-br-lg">Duration : 8 Month</div>   
-            </div>
-        </div>
-        <div class="w-1/6">
-            <div class="bg-white rounded-lg border shadow">
-                <div class="p-2">
-                <img src="https://codewithsadiq.com/public/images/course/1639916450.jpg" alt="">
-                <hr>
-                <h2>Laravel & php Devoloper</h2>
-            </div>
-            <div class="bg-teal-800 font-bold text-white w-full p-3 rounded-bl-lg rounded-br-lg">Duration : 9 Month</div>   
-            </div>
-        </div>
-        <div class="w-1/6">
-            <div class="bg-white rounded-lg border shadow">
-                <div class="p-2">
-                <img src="https://codewithsadiq.com/public/images/course/1639916867.jpg" alt="">
-                <hr>
-                <h2>Python With Data Structure</h2>
-            </div>
-            <div class="bg-teal-800 font-bold text-white w-full p-3 rounded-bl-lg rounded-br-lg">Duration : 4 Month</div>   
-            </div>
-        </div>
-        <div class="w-1/6">
-            <div class="bg-white rounded-lg border shadow">
-                <div class="p-2">
-                <img src="https://codewithsadiq.com/public/images/course/1654318489.png" alt="">
-                <hr>
-                <h2>Python With Data Structure</h2>
-            </div>
-            <div class="bg-teal-800 font-bold text-white w-full p-3 rounded-bl-lg rounded-br-lg">Duration : 4 Month</div>   
-            </div>
-        </div>
-    </div>
+
+        </a>
+        @endforeach
+        
+    </div>      
     <div class="px-10 py-5">
         <h2 class="text-2xl font-semibold text-green-500 ">Our Students In Industry</h2>
         <p class="text-sm">Contributing Nation Development</p>
-    </div>
+    </div>  
     <div class="flex px-10">
         <div class="w-1/5 p-2">
             <div class="bg-white rounded-lg border shadow">

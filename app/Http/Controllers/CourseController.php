@@ -25,7 +25,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view("admin/addCourse");
+         return view("admin/addCourse");
     }
 
     /**
@@ -80,7 +80,8 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        $data['course']=$course;
+        return view("admin.editCourse",$data);
     }
 
     /**
@@ -92,7 +93,29 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+       
+            // $data=$request->validate([
+            //     'title'=> 'required',
+            //     'duration'=> 'required',
+            //     'price'=> 'required',
+            //     'discount_price'=> 'required',
+            //     'description'=> 'required',
+            //     'image'=> 'required|image',
+            // ]);
+
+          
+            $course->title = $request->title;
+            $course->duration = $request->duration;
+            $course->price = $request->price;
+            $course->discount_price = $request->discount_price;
+            $course->description = $request->description;
+
+            $filename=$request->image->getClientOriginalName();
+            $request->image->move(public_path("course"),$filename);
+            $course->image=$filename;
+            $course->save();
+            return redirect()->route("course.index");
+        
     }
 
     /**
