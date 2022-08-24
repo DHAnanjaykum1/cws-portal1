@@ -19,7 +19,7 @@
     <div class="flex gap-5 px-10">
         @foreach ($data as $item)
         
-            <a class="w-1/6" href="{{ route('course.index') }}">
+            <a class="w-1/6" href="{{ route('viewcourse',['id' =>$item->id]) }}">
             <div class="bg-white rounded-lg border shadow">
                 <div class="p-2">
                 <img src="{{asset('course/'.$item->image)}}" alt="" class="w-full h-32 rounded-sm">

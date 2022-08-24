@@ -9,7 +9,8 @@ use App\Http\Controllers\HomeController;
 
 
 
-Route::get('/',[HomeController::class,"index"]);
+Route::get('/',[HomeController::class,"index"])->name("home");
+Route::get('/view-course/{id}',[HomeController::class,"viewCourse"])->name("viewcourse");
 
 Route::prefix("admin")->group(function(){
     Route::get("/",[AdminController::class,"index"])->name("admin.dashboard");
